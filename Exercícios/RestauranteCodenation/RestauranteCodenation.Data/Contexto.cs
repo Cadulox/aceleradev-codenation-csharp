@@ -10,7 +10,7 @@ namespace RestauranteCodenation.Data
         public DbSet<Ingrediente> Ingrediente { get; set; }
         public DbSet<Prato> Prato { get; set; }
         public DbSet<TipoPrato> TipoPrato { get; set; }
-        public DbSet<Agenda> DiaCardapio { get; set; }
+        public DbSet<Agenda> Agenda { get; set; }
         public DbSet<PratosIngredientes> PratosIngredientes { get; set; }
         public DbSet<AgendaCardapio> AgendaCardapios { get; set; }
 

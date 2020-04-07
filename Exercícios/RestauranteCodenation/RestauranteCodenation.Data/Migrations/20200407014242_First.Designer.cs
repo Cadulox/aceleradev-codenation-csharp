@@ -10,8 +10,8 @@ using RestauranteCodenation.Data;
 namespace RestauranteCodenation.Data.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200403012332_MeuPrimeiroBanco")]
-    partial class MeuPrimeiroBanco
+    [Migration("20200407014242_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

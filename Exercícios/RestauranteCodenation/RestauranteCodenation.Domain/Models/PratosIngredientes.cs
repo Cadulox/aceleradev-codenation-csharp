@@ -1,4 +1,6 @@
-﻿namespace RestauranteCodenation.Domain
+﻿using RestauranteCodenation.Domain.Repositorio;
+
+namespace RestauranteCodenation.Domain
 {
     public class PratosIngredientes
     {

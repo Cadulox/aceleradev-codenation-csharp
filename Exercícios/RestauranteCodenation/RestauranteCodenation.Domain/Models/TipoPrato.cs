@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using RestauranteCodenation.Domain.Repositorio;
+using System.Collections.Generic;
 
 namespace RestauranteCodenation.Domain
 {
-    public class TipoPrato
+    public class TipoPrato : IEntity
     {
         public int Id { get; set; }
         public string Descricao { get; set; }

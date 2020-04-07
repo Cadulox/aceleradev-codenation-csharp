@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using RestauranteCodenation.Domain.Repositorio;
+using System.Collections.Generic;
 
 namespace RestauranteCodenation.Domain
 {
-    public class Cardapio
+    public class Cardapio : IEntity
     {
         public int Id { get; set; }
         public string Nome { get; set; }
