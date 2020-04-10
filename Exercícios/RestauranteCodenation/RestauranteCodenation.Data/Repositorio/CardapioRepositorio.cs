@@ -2,7 +2,7 @@
 
 namespace RestauranteCodenation.Data.Repositorio
 {
-    public class IngredienteRepositorio : RepositorioBase<Ingrediente>
-    {              
+    public class CardapioRepositorio : RepositorioBase<Cardapio>
+    {
     }
 }

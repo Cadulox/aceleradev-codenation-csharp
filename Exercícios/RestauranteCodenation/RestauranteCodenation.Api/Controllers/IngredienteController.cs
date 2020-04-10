@@ -10,31 +10,31 @@ namespace RestauranteCodenation.Api.Controllers
     [ApiController]
     public class IngredienteController : ControllerBase
     {
-        private readonly IngredienteRepositorio _ingredienteRepositorio;
+        private readonly IngredienteRepositorio _repo;
 
         public IngredienteController()
         {
-            _ingredienteRepositorio = new IngredienteRepositorio();
+            _repo = new IngredienteRepositorio();
         }
         // GET: api/Ingrediente
         [HttpGet]
         public IEnumerable<Ingrediente> Get()
         {
-            return _ingredienteRepositorio.SelecionarTodos();
+            return _repo.SelecionarTodos();
         }
 
         // GET: api/Ingrediente/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public Ingrediente Get(int id)
         {
-            return _ingredienteRepositorio.SelecionarPorId(id);
+            return _repo.SelecionarPorId(id);
         }
 
         // POST: api/Ingrediente
         [HttpPost]
         public Ingrediente Post([FromBody] Ingrediente ingrediente)
         {
-            _ingredienteRepositorio.Incluir(ingrediente);
+            _repo.Incluir(ingrediente);
             return ingrediente;
         }
 
@@ -42,7 +42,7 @@ namespace RestauranteCodenation.Api.Controllers
         [HttpPut]
         public Ingrediente Put([FromBody] Ingrediente ingrediente)
         {
-            _ingredienteRepositorio.Alterar(ingrediente);
+            _repo.Alterar(ingrediente);
             return ingrediente;
         }
 
@@ -50,8 +50,8 @@ namespace RestauranteCodenation.Api.Controllers
         [HttpDelete("{id}")]
         public List<Ingrediente> Delete(int id)
         {
-            _ingredienteRepositorio.Excluir(id);
-            return _ingredienteRepositorio.SelecionarTodos();
+            _repo.Excluir(id);
+            return _repo.SelecionarTodos();
         }
     }
 }

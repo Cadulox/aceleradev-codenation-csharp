@@ -2,8 +2,9 @@
 
 namespace RestauranteCodenation.Domain
 {
-    public class AgendaCardapio
+    public class AgendaCardapio : IEntity
     {
+        public int Id { get; set; }
         public int IdCardapio { get; set; }
         public Cardapio Cardapio { get; set; }
 
