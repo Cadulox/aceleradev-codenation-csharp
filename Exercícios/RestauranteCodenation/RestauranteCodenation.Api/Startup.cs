@@ -29,8 +29,15 @@ namespace RestauranteCodenation.Api
             services.AddControllers()
                 .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling =
                 Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             services.AddScoped(typeof(IRepositorioBase<>), typeof(RepositorioBase<>));
             services.AddScoped<ITipoPratoRepositorio, TipoPratoRepositorio>();
+            services.AddScoped<IAgendaCardapioRepositorio, AgendaCardapioRepositorio>();
+            services.AddScoped<IAgendaRepositorio, AgendaRepositorio>();
+            services.AddScoped<ICardapioRepositorio, CardapioRepositorio>();
+            services.AddScoped<IIngredienteRepositorio, IngredienteRepositorio>();
+            services.AddScoped<IPratoRepositorio, PratoRepositorio>();
+            services.AddScoped<IPratosIngredientesRepositorio, PratosIngredientesRepositorio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

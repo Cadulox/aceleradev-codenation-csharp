@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using RestauranteCodenation.Data.Repositorio;
 using RestauranteCodenation.Domain;
+using RestauranteCodenation.Domain.Repositorio;
 
 namespace RestauranteCodenation.Api.Controllers
 {
@@ -9,11 +10,11 @@ namespace RestauranteCodenation.Api.Controllers
     [ApiController]
     public class AgendaCardapioController : ControllerBase
     {
-        private readonly AgendaCardapioRepositorio _repo;
+        private readonly IAgendaCardapioRepositorio _repo;
 
-        public AgendaCardapioController()
+        public AgendaCardapioController(IAgendaCardapioRepositorio repo)
         {
-            _repo = new AgendaCardapioRepositorio();
+            _repo = repo;
         }
 
         [HttpGet]
