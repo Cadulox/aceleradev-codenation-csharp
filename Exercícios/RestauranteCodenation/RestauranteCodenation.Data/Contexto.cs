@@ -7,7 +7,7 @@ namespace RestauranteCodenation.Data
     public class Contexto : DbContext
     {
         public DbSet<Cardapio> Cardapio { get; set; }
-        public DbSet<Ingrediente> Ingrediente { get; set; }
+        public DbSet<Cardapio> Ingrediente { get; set; }
         public DbSet<Prato> Prato { get; set; }
         public DbSet<TipoPrato> TipoPrato { get; set; }
         public DbSet<Agenda> Agenda { get; set; }

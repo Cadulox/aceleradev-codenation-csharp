@@ -4,11 +4,11 @@ using RestauranteCodenation.Domain;
 
 namespace RestauranteCodenation.Data.Map
 {
-    public class IngredienteMap : IEntityTypeConfiguration<Ingrediente>
+    public class IngredienteMap : IEntityTypeConfiguration<Cardapio>
     {
-        public void Configure(EntityTypeBuilder<Ingrediente> builder)
+        public void Configure(EntityTypeBuilder<Cardapio> builder)
         {
-            builder.ToTable(nameof(Ingrediente));
+            builder.ToTable(nameof(Cardapio));
 
             builder.HasKey(x => x.Id);
 

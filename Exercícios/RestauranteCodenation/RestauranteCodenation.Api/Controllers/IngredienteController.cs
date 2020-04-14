@@ -9,29 +9,29 @@ namespace RestauranteCodenation.Api.Controllers
     [ApiController]
     public class IngredienteController : ControllerBase
     {
-        private readonly IIngredienteRepositorio _repo;
+        private readonly ICardapioRepositorio _repo;
 
-        public IngredienteController(IIngredienteRepositorio repo)
+        public IngredienteController(ICardapioRepositorio repo)
         {
             _repo = repo;
         }
         // GET: api/Ingrediente
         [HttpGet]
-        public IEnumerable<Ingrediente> Get()
+        public IEnumerable<Cardapio> Get()
         {
             return _repo.SelecionarTodos();
         }
 
         // GET: api/Ingrediente/5
         [HttpGet("{id}")]
-        public Ingrediente Get(int id)
+        public Cardapio Get(int id)
         {
             return _repo.SelecionarPorId(id);
         }
 
         // POST: api/Ingrediente
         [HttpPost]
-        public Ingrediente Post([FromBody] Ingrediente ingrediente)
+        public Cardapio Post([FromBody] Cardapio ingrediente)
         {
             _repo.Incluir(ingrediente);
             return ingrediente;
@@ -39,7 +39,7 @@ namespace RestauranteCodenation.Api.Controllers
 
         // PUT: api/Ingrediente/5
         [HttpPut]
-        public Ingrediente Put([FromBody] Ingrediente ingrediente)
+        public Cardapio Put([FromBody] Cardapio ingrediente)
         {
             _repo.Alterar(ingrediente);
             return ingrediente;
@@ -47,7 +47,7 @@ namespace RestauranteCodenation.Api.Controllers
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public List<Ingrediente> Delete(int id)
+        public List<Cardapio> Delete(int id)
         {
             _repo.Excluir(id);
             return _repo.SelecionarTodos();
