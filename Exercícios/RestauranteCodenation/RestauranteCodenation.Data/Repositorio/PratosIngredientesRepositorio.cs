@@ -8,6 +8,9 @@ namespace RestauranteCodenation.Data.Repositorio
 {
     public class PratosIngredientesRepositorio : RepositorioBase<PratosIngredientes>, IPratosIngredientesRepositorio
     {
+        public PratosIngredientesRepositorio(Contexto contexto) : base(contexto)
+        {
+        }
         public List<PratosIngredientes> SelecionarCompleto()
         {
             return _contexto

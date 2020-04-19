@@ -10,9 +10,9 @@ namespace RestauranteCodenation.Data.Repositorio
     {
         protected readonly Contexto _contexto;
 
-        public RepositorioBase()
+        public RepositorioBase(Contexto contexto)
         {
-            _contexto = new Contexto();
+            _contexto = contexto;
         }
 
         public void Incluir(T entity)

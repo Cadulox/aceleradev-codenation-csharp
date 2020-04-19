@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using RestauranteCodenation.Data.Map;
 using RestauranteCodenation.Domain;
 
 namespace RestauranteCodenation.Data
 {
-    public class Contexto : DbContext
+    public class Contexto : IdentityDbContext
     {
         public DbSet<Cardapio> Cardapio { get; set; }
         public DbSet<Cardapio> Ingrediente { get; set; }
@@ -14,10 +15,9 @@ namespace RestauranteCodenation.Data
         public DbSet<PratosIngredientes> PratosIngredientes { get; set; }
         public DbSet<AgendaCardapio> AgendaCardapios { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public Contexto(DbContextOptions<Contexto> options)
+            : base(options)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-EJ7LE9R\SQLEXPRESS;Database=RestCodenation;Trusted_Connection=True;");
-            base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
